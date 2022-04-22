@@ -76,19 +76,21 @@ foreign key(id) references instructors(id),
 foreign key(course_offering_id) references course_offerings(course_offering_id)
 );
 
-create table takes(
-id int,
-course_offering_id int,
-grade varchar(2),
-
-primary key(id, course_offering_id),
-foreign key(id) references students(id),
-foreign key(course_offering_id) references course_offerings(course_offering_id)
+CREATE TABLE takes (
+    id INT,
+    course_offering_id INT,
+    grade VARCHAR(2),
+    approved BOOLEAN,
+    PRIMARY KEY (id , course_offering_id),
+    FOREIGN KEY (id)
+        REFERENCES students (id),
+    FOREIGN KEY (course_offering_id)
+        REFERENCES course_offerings (course_offering_id)
 );
 
-create table grades_credits(
-grade varchar(2),
-credits numeric(2, 1)
+CREATE TABLE grades_credits (
+    grade VARCHAR(2),
+    credits NUMERIC(2 , 1 )
 );
 
 insert into grades_credits values ('A+', 4);
