@@ -14,8 +14,8 @@ CREATE TABLE users (
 
 CREATE TABLE students (
     id INT,
-    gpa TINYINT,
-    facultyId VARCHAR(16),
+    gpa Decimal(3,2),
+    facultyId VARCHAR(16) unique,
     PRIMARY KEY (id),
     FOREIGN KEY (id)
         REFERENCES users (id)
@@ -48,13 +48,13 @@ credit_hours tinyint,
 primary key(course_id)
 );
 
-CREATE TABLE prerequisits (
+CREATE TABLE prerequisites (
     course_id INT,
-    prerequisit_id INT,
-    PRIMARY KEY (course_id , prerequisit_id),
+    prerequisite_id INT,
+    PRIMARY KEY (course_id , prerequisite_id),
     FOREIGN KEY (course_id)
         REFERENCES courses (course_id),
-    FOREIGN KEY (prerequisit_id)
+    FOREIGN KEY (prerequisite_id)
         REFERENCES courses (course_id)
 );
 
@@ -106,6 +106,3 @@ insert into grades_credits values ('D+', 1.3);
 insert into grades_credits values ('D', 1);
 insert into grades_credits values ('D-', 0.7);
 insert into grades_credits values ('F', 0);
-
-
-
