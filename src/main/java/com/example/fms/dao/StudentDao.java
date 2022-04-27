@@ -1,18 +1,16 @@
 package com.example.fms.dao;
 
-import com.example.fms.model.Course;
 import com.example.fms.model.CourseOffering;
 import com.example.fms.model.Student;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public interface StudentDao {
 
     //keyword could be name, email, facultyId ...
     ArrayList<Student> findStudentByKeyword(String keyword);
 
-    Student findStudentById(String id);
+    Student findStudentById(int id);
 
     ArrayList<Student> findStudentsByCourseOffering(CourseOffering offering);
 
