@@ -2,18 +2,18 @@ package com.example.fms.model;
 import java.sql.Date;
 
 public class User {
-    private String id;
+    private int id;
     private String name;
     private String email;
     private String password;
     private String address;
     private Date birthdate;
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
