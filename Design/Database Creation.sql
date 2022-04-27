@@ -44,6 +44,7 @@ course_id int auto_increment,
 course_code varchar(8),
 name varchar(512),
 credit_hours tinyint,
+course_description varchar (1024),
 
 primary key(course_id)
 );

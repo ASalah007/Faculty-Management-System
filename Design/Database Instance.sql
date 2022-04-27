@@ -60,12 +60,13 @@ INSERT INTO advises (student_id, instructor_id) VALUES ('5', '9');
 INSERT INTO advises (student_id, instructor_id) VALUES ('16', '9');
 INSERT INTO advises (student_id, instructor_id) VALUES ('15', '9');
 -- courses data
-INSERT INTO courses (course_id, course_code, name, credit_hours) VALUES ('1', 'CSE131', 'Computer Programming', '3');
-INSERT INTO courses (course_id, course_code, name, credit_hours) VALUES ('2', 'CSE231', 'Advanced Computer Programming', '3');
-INSERT INTO courses (course_id, course_code, name, credit_hours) VALUES ('3', 'CSE331', 'Data Structures and Algorithms', '3');
+INSERT INTO courses (course_id, course_code, name, credit_hours,course_description) VALUES ('1', 'CSE131', 'Computer Programming', '3','One of the most useful courses just don`t take it kekw ');
+INSERT INTO courses (course_id, course_code, name, credit_hours,course_description) VALUES ('2', 'CSE231', 'Advanced Computer Programming', '3','god save of lord and saviour the master of programming Mahmoud Khalil ');
+INSERT INTO courses (course_id, course_code, name, credit_hours,course_description) VALUES ('3', 'CSE331', 'Data Structures and Algorithms', '3','suiiiiiiiiiiiiiiiiiiiiiiiiii');
 -- prerequisites data
-INSERT INTO prerequisites (course_id, prerequisite_id) VALUES ('1', '2');
-INSERT INTO prerequisites (course_id, prerequisite_id) VALUES ('2', '3');
+INSERT INTO prerequisites (course_id, prerequisite_id) VALUES ('2', '1');
+INSERT INTO prerequisites (course_id, prerequisite_id) VALUES ('3', '1');
+INSERT INTO prerequisites (course_id, prerequisite_id) VALUES ('3', '2');
 -- course_offering data
 INSERT INTO course_offerings (course_offering_id, year, semester, course_id) VALUES ('1', '2020', 'Fall', '1');
 INSERT INTO course_offerings (course_offering_id, year, semester, course_id) VALUES ('2', '2021', 'Spring', '2');
