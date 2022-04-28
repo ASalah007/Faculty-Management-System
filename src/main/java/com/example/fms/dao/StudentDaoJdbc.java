@@ -64,7 +64,7 @@ public class StudentDaoJdbc implements  StudentDao {
             ResultSet rs = statement.executeQuery();
 
             if(rs.next()){
-                student.setId(rs.getString("id"));
+                student.setId(rs.getInt("id"));
                 student.setGPA(rs.getDouble("gpa"));
                 student.setFaculty_ID(rs.getString("facultyId"));
                 student.setName(rs.getString("name"));
@@ -118,7 +118,7 @@ public class StudentDaoJdbc implements  StudentDao {
     @Override
     public void enrollStudent(Student student, CourseOffering offering) {
         int courseOfferingId = offering.getCourse_offering_id();
-        String studentId = student.getId();
+        int studentId = student.getId();
         String sql = "insert into takes(id,course_offering_id)" +
                 "     values(\""+studentId+"\",\""+courseOfferingId+"\");";
         Connection conn = null;
@@ -139,7 +139,7 @@ public class StudentDaoJdbc implements  StudentDao {
     @Override
     public void unenrollStudent(Student student, CourseOffering offering) {
         int courseOfferingId = offering.getCourse_offering_id();
-        String studentId = student.getId();
+        int studentId = student.getId();
         String sql = "delete from takes" +
                 "     where id = \""+studentId+"\"" +
                 "     and course_offering_id = \""+courseOfferingId+"\";";
@@ -161,7 +161,7 @@ public class StudentDaoJdbc implements  StudentDao {
     @Override
     public void approveEnrollment(Student student, CourseOffering offering) {
         int courseOfferingId = offering.getCourse_offering_id();
-        String studentId = student.getId();
+        int studentId = student.getId();
         String sql = "update takes" +
                 "     set approved = true" +
                 "     where id = \""+studentId+"\"" +
@@ -185,7 +185,7 @@ public class StudentDaoJdbc implements  StudentDao {
     public void setStudentGrade(Student student, CourseOffering offering, int grade) {
         //it is assumed that the student has already been enrolled in the course
         int courseOfferingId = offering.getCourse_offering_id();
-        String studentId = student.getId();
+        int studentId = student.getId();
         String sql = "update takes" +
                 "     set grade = \""+grade+"\"" +
                 "     where id = \""+studentId+"\"" +

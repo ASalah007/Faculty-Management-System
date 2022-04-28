@@ -26,7 +26,7 @@ public class UserDaoJdbc implements UserDao{
                 user.setEmail(rs.getString("email"));
                 user.setPassword(rs.getString("password"));
                 user.setAddress(rs.getString("address"));
-                user.setId(rs.getString("id"));
+                user.setId(rs.getInt("id"));
             }
         }
         catch(Exception ex){
@@ -41,7 +41,7 @@ public class UserDaoJdbc implements UserDao{
     public static void main(String[] args){
         // quick test
         UserDao obj = new UserDaoJdbc();
-        User user = obj.findUserByemail("ahmed@gmail.com");
+        User user = obj.findUserByemail("crodenburgh0@e-recht24.de");
         System.out.println(user.getName());
     }
 }
