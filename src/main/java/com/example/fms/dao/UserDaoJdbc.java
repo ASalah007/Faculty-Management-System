@@ -20,7 +20,7 @@ public class UserDaoJdbc implements UserDao{
             ResultSet rs = statement.executeQuery();
 
             if(rs.next()){
-                user.setId(rs.getInt("id"));
+                user.setId(rs.getString("id"));
                 user.setName(rs.getString("name"));
                 user.setBirthdate(rs.getDate("birthdate"));
                 user.setEmail(rs.getString("email"));
@@ -49,7 +49,7 @@ public class UserDaoJdbc implements UserDao{
             ResultSet rs = statement.executeQuery();
 
             if(rs.next()){
-                user.setId(rs.getInt("id"));
+                user.setId(rs.getString("id"));
 
                 user = new User();
                 user.setName(rs.getString("name"));
@@ -57,7 +57,7 @@ public class UserDaoJdbc implements UserDao{
                 user.setEmail(rs.getString("email"));
                 user.setPassword(rs.getString("password"));
                 user.setAddress(rs.getString("address"));
-                user.setId(rs.getInt("id"));
+                user.setId(rs.getString("id"));
             }
         }
         catch(Exception ex){
