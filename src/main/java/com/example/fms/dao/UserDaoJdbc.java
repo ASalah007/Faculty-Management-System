@@ -10,7 +10,7 @@ public class UserDaoJdbc implements UserDao{
     @Override
     public User findUserByemail(String email) {
 
-        User user  = null;
+        User user  = new User();
         String sql = "select * from users where email =\""+email+"\";";
         Connection conn = null;
 
@@ -20,13 +20,44 @@ public class UserDaoJdbc implements UserDao{
             ResultSet rs = statement.executeQuery();
 
             if(rs.next()){
+                user.setId(rs.getInt("id"));
+                user.setName(rs.getString("name"));
+                user.setBirthdate(rs.getDate("birthdate"));
+                user.setEmail(rs.getString("email"));
+                user.setPassword(rs.getString("password"));
+                user.setAddress(rs.getString("address"));
+            }
+        }
+        catch(Exception ex){
+            ex.printStackTrace();
+        }
+        finally{
+            Jdbc.closeConnection(conn);
+        }
+        return user;
+    }
+
+    @Override
+    public User findUserByID(String id) {
+        User user  = new User();
+        String sql = "select * from users where id =\""+id+"\";";
+        Connection conn = null;
+
+        try{
+            conn = Jdbc.getConnection();
+            PreparedStatement statement = conn.prepareStatement(sql);
+            ResultSet rs = statement.executeQuery();
+
+            if(rs.next()){
+                user.setId(rs.getInt("id"));
+
                 user = new User();
                 user.setName(rs.getString("name"));
                 user.setBirthdate(rs.getDate("birthdate"));
                 user.setEmail(rs.getString("email"));
                 user.setPassword(rs.getString("password"));
                 user.setAddress(rs.getString("address"));
-                user.setId(rs.getString("id"));
+                user.setId(rs.getInt("id"));
             }
         }
         catch(Exception ex){
@@ -44,4 +75,5 @@ public class UserDaoJdbc implements UserDao{
         User user = obj.findUserByemail("ahmed@gmail.com");
         System.out.println(user.getName());
     }
+
 }
