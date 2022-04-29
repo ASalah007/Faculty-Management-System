@@ -61,7 +61,7 @@ public class InstructorDaoJdbc implements InstructorDao{
             ResultSet rs = statement.executeQuery();
             while(rs.next()){
                 Instructor instructor= new Instructor();
-                instructor.setId(rs.getInt("id"));
+                instructor.setId(rs.getString("id"));
                 instructor.setName(rs.getString("name"));
                 instructor.setAddress(rs.getString("address"));
                 instructor.setEmail(rs.getString("email"));

@@ -1,24 +1,24 @@
 -- users data
-insert into users (id, name, email, password, birthdate) values (1, 'Chrysler Rodenburgh', 'crodenburgh0@e-recht24.de', 'FbLEm9pLwfM', '1971-06-10');
-insert into users (id, name, email, password, birthdate) values (2, 'Gawen Salmon', 'gsalmon1@goo.ne.jp', 'Xp9dp0fNhRrA', '2000-02-10');
-insert into users (id, name, email, password, birthdate) values (3, 'Taylor Jex', 'tjex2@livejournal.com', 'pCE4AVDSn', '2001-08-26');
-insert into users (id, name, email, password, birthdate) values (4, 'Deana Laden', 'dladen3@vimeo.com', 'ic3QkWVzpL', '2001-11-18');
-insert into users (id, name, email, password, birthdate) values (5, 'Adey Scurry', 'ascurry4@ifeng.com', 'm8lqlvk', '1999-02-23');
-insert into users (id, name, email, password, birthdate) values (6, 'Genia Beggini', 'gbeggini5@csmonitor.com', '2RRwlI', '1998-11-15');
-insert into users (id, name, email, password, birthdate) values (7, 'Robinetta Cudby', 'rcudby6@twitpic.com', 'xxLgvFUGV', '1991-02-09');
-insert into users (id, name, email, password, birthdate) values (8, 'Dominic Gullyes', 'dgullyes7@berkeley.edu', 'fvEVFXVE6', '1976-07-24');
-insert into users (id, name, email, password, birthdate) values (9, 'Brandais MacTeague', 'bmacteague8@gravatar.com', 'ZH69AYZJoZ7', '1985-02-14');
-insert into users (id, name, email, password, birthdate) values (10, 'Cornelius Main', 'cmain9@prlog.org', 'poKTf7hSir', '1999-05-04');
-insert into users (id, name, email, password, birthdate) values (11, 'Betta Knudsen', 'bknudsena@independent.co.uk', 'MsZNmGW', '2000-05-26');
-insert into users (id, name, email, password, birthdate) values (12, 'Clem Roswarn', 'croswarnb@bizjournals.com', '56Sg4EvPt', '1997-05-28');
-insert into users (id, name, email, password, birthdate) values (13, 'Asia Cutford', 'acutfordc@ocn.ne.jp', '3Yuovv', '1998-07-17');
-insert into users (id, name, email, password, birthdate) values (14, 'Leodora Kits', 'lkitsd@prlog.org', 'KjKBrn9ojM', '1999-07-13');
-insert into users (id, name, email, password, birthdate) values (15, 'Carolee Jeske', 'cjeskee@shinystat.com', 'Y92Djk91BmVX', '2002-10-05');
-insert into users (id, name, email, password, birthdate) values (16, 'Dorthea Portwaine', 'dportwainef@webnode.com', 'L8WJGt7k5', '2003-01-06');
-insert into users (id, name, email, password, birthdate) values (17, 'Kylie Hemmingway', 'khemmingwayg@mlb.com', 'GIC90hPo', '1999-09-02');
-insert into users (id, name, email, password, birthdate) values (18, 'Arch Hutton', 'ahuttonh@linkedin.com', 'jtaSyxfz69nX', '1999-01-30');
-insert into users (id, name, email, password, birthdate) values (19, 'Jackquelin Purvess', 'jpurvessi@ycombinator.com', 'qbVoAv', '1998-11-04');
-insert into users (id, name, email, password, birthdate) values (20, 'Kendra Petto', 'kpettoj@altervista.org', 'IFkATKNdd7', '2003-07-20');
+insert into users (id, name, email, password, birthdate) values (1, 'Chrysler Rodenburgh', 'crodenburgh0@e-recht24.de', md5('FbLEm9pLwfM'), '1971-06-10');
+insert into users (id, name, email, password, birthdate) values (2, 'Gawen Salmon', 'gsalmon1@goo.ne.jp', md5('Xp9dp0fNhRrA'), '2000-02-10');
+insert into users (id, name, email, password, birthdate) values (3, 'Taylor Jex', 'tjex2@livejournal.com', md5('pCE4AVDSn'), '2001-08-26');
+insert into users (id, name, email, password, birthdate) values (4, 'Deana Laden', 'dladen3@vimeo.com', md5('ic3QkWVzpL'), '2001-11-18');
+insert into users (id, name, email, password, birthdate) values (5, 'Adey Scurry', 'ascurry4@ifeng.com', md5('m8lqlvk'), '1999-02-23');
+insert into users (id, name, email, password, birthdate) values (6, 'Genia Beggini', 'gbeggini5@csmonitor.com', md5('2RRwlI'), '1998-11-15');
+insert into users (id, name, email, password, birthdate) values (7, 'Robinetta Cudby', 'rcudby6@twitpic.com', md5('xxLgvFUGV'), '1991-02-09');
+insert into users (id, name, email, password, birthdate) values (8, 'Dominic Gullyes', 'dgullyes7@berkeley.edu', md5('fvEVFXVE6'), '1976-07-24');
+insert into users (id, name, email, password, birthdate) values (9, 'Brandais MacTeague', 'bmacteague8@gravatar.com', md5('ZH69AYZJoZ7'), '1985-02-14');
+insert into users (id, name, email, password, birthdate) values (10, 'Cornelius Main', 'cmain9@prlog.org', md5('poKTf7hSir'), '1999-05-04');
+insert into users (id, name, email, password, birthdate) values (11, 'Betta Knudsen', 'bknudsena@independent.co.uk', md5('MsZNmGW'), '2000-05-26');
+insert into users (id, name, email, password, birthdate) values (12, 'Clem Roswarn', 'croswarnb@bizjournals.com', md5('56Sg4EvPt'), '1997-05-28');
+insert into users (id, name, email, password, birthdate) values (13, 'Asia Cutford', 'acutfordc@ocn.ne.jp', md5('3Yuovv'), '1998-07-17');
+insert into users (id, name, email, password, birthdate) values (14, 'Leodora Kits', 'lkitsd@prlog.org', md5('KjKBrn9ojM'), '1999-07-13');
+insert into users (id, name, email, password, birthdate) values (15, 'Carolee Jeske', 'cjeskee@shinystat.com', md5('Y92Djk91BmVX'), '2002-10-05');
+insert into users (id, name, email, password, birthdate) values (16, 'Dorthea Portwaine', 'dportwainef@webnode.com', md5('L8WJGt7k5'), '2003-01-06');
+insert into users (id, name, email, password, birthdate) values (17, 'Kylie Hemmingway', 'khemmingwayg@mlb.com', md5('GIC90hPo'), '1999-09-02');
+insert into users (id, name, email, password, birthdate) values (18, 'Arch Hutton', 'ahuttonh@linkedin.com', md5('jtaSyxfz69nX'), '1999-01-30');
+insert into users (id, name, email, password, birthdate) values (19, 'Jackquelin Purvess', 'jpurvessi@ycombinator.com', md5('qbVoAv'), '1998-11-04');
+insert into users (id, name, email, password, birthdate) values (20, 'Kendra Petto', 'kpettoj@altervista.org', md5('IFkATKNdd7'), '2003-07-20');
 -- students data
 insert into students (id, gpa, facultyId) values (2, 2.0, 1803165);
 insert into students (id, gpa, facultyId) values (3, 2.1, 1902198);
@@ -60,9 +60,9 @@ INSERT INTO advises (student_id, instructor_id) VALUES ('5', '9');
 INSERT INTO advises (student_id, instructor_id) VALUES ('16', '9');
 INSERT INTO advises (student_id, instructor_id) VALUES ('15', '9');
 -- courses data
-INSERT INTO courses (course_id, course_code, name, credit_hours,course_description) VALUES ('1', 'CSE131', 'Computer Programming', '3','One of the most useful courses just don`t take it kekw ');
-INSERT INTO courses (course_id, course_code, name, credit_hours,course_description) VALUES ('2', 'CSE231', 'Advanced Computer Programming', '3','god save of lord and saviour the master of programming Mahmoud Khalil ');
-INSERT INTO courses (course_id, course_code, name, credit_hours,course_description) VALUES ('3', 'CSE331', 'Data Structures and Algorithms', '3','suiiiiiiiiiiiiiiiiiiiiiiiiii');
+INSERT INTO courses (course_id, course_code, name, credit_hours,course_description) VALUES ('1', 'CSE131', 'Computer Programming', '3','An Overview of Computers and Programming Languages, Basic Elements of C++. Input/Output. Control Structures(Selection & Repetition). User-Defined Functions, Simple Data Types, Namespaces. Arrays and Strings. Structs. Recursion ');
+INSERT INTO courses (course_id, course_code, name, credit_hours,course_description) VALUES ('2', 'CSE231', 'Advanced Computer Programming', '3','Structured and object-oriented programming paradigms. Classes. Objects. Methods. Interfaces. Polymorphism. Inheritance. Data Hiding. Constructors. Destructors. Access specifiers. Operator overloading. Function overloading. Virtual functions. Friend functions. Abstract classes. Implementation of dynamic data structures. Template functions and classes. Graphical User Interface programming. Graphics. Event-driven programming. Multimedia. Network programming. Database programming. Concurrency and multi-threaded programming.');
+INSERT INTO courses (course_id, course_code, name, credit_hours,course_description) VALUES ('3', 'CSE331', 'Data Structures and Algorithms', '3','Algorithms: definitions, correctness, efficiency. Complexity analysis: The big O-notation, the theta-notation, and the Omega-notation. Elementary data structures: linked lists; (single, double, and circular), stacks, queues, and priority queues. Recursion: tail recursion, indirect recursion, non-tail recursion, nested recursion, and excessive recursion. Trees: binary and search trees and tree operations (insertion, deletion, and balancing). Multiway trees: B-tree, B*-tree, B+-tree, R-tree. Graphs. Sorting algorithms: insertion, selection, bubble, merge, quick, and radix. Comparison between sort algorithm using complexity analysis notations.');
 -- prerequisites data
 INSERT INTO prerequisites (course_id, prerequisite_id) VALUES ('2', '1');
 INSERT INTO prerequisites (course_id, prerequisite_id) VALUES ('3', '1');
