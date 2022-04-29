@@ -47,7 +47,7 @@ public class CourseOfferingDaoJdbc implements CourseOfferingDao {
 
     @Override
     public ArrayList<CourseOffering> findStudentOfferings(Student student){
-        String student_ID=student.getId();
+        int student_ID=student.getId();
         ArrayList<CourseOffering> courseOfferings = new ArrayList<>();
         String sql= "select * from course_offerings " +
                 "join takes using(course_offering_id) " +
