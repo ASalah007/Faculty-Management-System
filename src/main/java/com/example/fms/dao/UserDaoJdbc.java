@@ -10,7 +10,7 @@ public class UserDaoJdbc implements UserDao{
     @Override
     public User findUserByemail(String email) {
 
-        User user  = new User();
+        User user  = null;
         String sql = "select * from users where email =\""+email+"\";";
         Connection conn = null;
 
@@ -20,6 +20,7 @@ public class UserDaoJdbc implements UserDao{
             ResultSet rs = statement.executeQuery();
 
             if(rs.next()){
+<<<<<<< HEAD
                 user.setId(rs.getString("id"));
                 user.setName(rs.getString("name"));
                 user.setBirthdate(rs.getDate("birthdate"));
@@ -50,11 +51,15 @@ public class UserDaoJdbc implements UserDao{
 
             if(rs.next()){
                 user.setId(rs.getString("id"));
+=======
+                user = new User();
+>>>>>>> upstream/main
                 user.setName(rs.getString("name"));
                 user.setBirthdate(rs.getDate("birthdate"));
                 user.setEmail(rs.getString("email"));
                 user.setPassword(rs.getString("password"));
                 user.setAddress(rs.getString("address"));
+                user.setId(rs.getString("id"));
             }
         }
         catch(Exception ex){
