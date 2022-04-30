@@ -35,7 +35,7 @@ public class StudentDaoJdbc implements  StudentDao {
             ResultSet rs = statement.executeQuery();
             StudentDaoJdbc studentDaoJdbc = new StudentDaoJdbc();
             while(rs.next()){
-                Student student = studentDaoJdbc.findStudentById(rs.getInt("id"));
+                Student student = studentDaoJdbc.findStudentById(rs.getString("id"));
                 students.add(student);
             }
         }
@@ -49,7 +49,7 @@ public class StudentDaoJdbc implements  StudentDao {
     }
 
     @Override
-    public Student findStudentById(int id) {
+    public Student findStudentById(String id) {
         Student student  = new Student();
         String sql = "select * from " +
                 "     students s " +
@@ -102,7 +102,7 @@ public class StudentDaoJdbc implements  StudentDao {
             ResultSet rs = statement.executeQuery();
             StudentDaoJdbc studentDaoJdbc = new StudentDaoJdbc();
             while(rs.next()){
-                Student student = studentDaoJdbc.findStudentById(rs.getInt("id"));
+                Student student = studentDaoJdbc.findStudentById(rs.getString("id"));
                 students.add(student);
             }
         }
@@ -203,5 +203,11 @@ public class StudentDaoJdbc implements  StudentDao {
         finally{
             Jdbc.closeConnection(conn);
         }
+    }
+
+    @Override
+    public boolean insertNewStudent(String email, String password, String name, String id,  String address, String birthdate){
+        // todo
+        return false;
     }
 }

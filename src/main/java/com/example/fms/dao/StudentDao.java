@@ -10,7 +10,7 @@ public interface StudentDao {
     //keyword could be name, email, facultyId ...
     ArrayList<Student> findStudentByKeyword(String keyword);
 
-    Student findStudentById(int id);
+    Student findStudentById(String id);
 
     ArrayList<Student> findStudentsByCourseOffering(CourseOffering offering);
 
@@ -21,6 +21,9 @@ public interface StudentDao {
     void approveEnrollment(Student student, CourseOffering offering);
 
     void setStudentGrade(Student student, CourseOffering offering, int grade);
+
+    // birhtdate is in formate "yyyy-mm-dd"
+    boolean insertNewStudent(String email, String password, String name, String id,  String address, String birthdate); 
 }
 
 
