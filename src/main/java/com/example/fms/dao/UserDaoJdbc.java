@@ -71,34 +71,37 @@ public class UserDaoJdbc implements UserDao{
     }
 
     @Override
-    public boolean insertNewUser(String email, String password, String name, String id, String address, String birthdate) {
-        String sql = "insert into users(id,name,email,password,address,birthdate)" +
-                "     values(\""+id+"\",\""+name+"\" , \""+email+"\" , md5(\""+password+"\") , \""+address+"\" , \""+birthdate+"\");";
+    public int insertNewUser(String email, String password, String name, String address, String birthdate) {
+        String sql = "insert into users(name,email,password,address,birthdate)" +
+                "     values(\""+name+"\" , \""+email+"\" , md5(\""+password+"\") , \""+address+"\" , \""+birthdate+"\");";
         Connection conn = null;
-        //boolean success = true;
         try
         {
             conn = Jdbc.getConnection();
             PreparedStatement statement = conn.prepareStatement(sql);
             statement.executeUpdate();
+            sql = "select LAST_INSERT_ID();";
+            statement = conn.prepareStatement(sql);
+            ResultSet rs = statement.executeQuery();
+            rs.next();
+            return rs.getInt("LAST_INSERT_ID()");
         }
         catch(Exception ex)
         {
             ex.printStackTrace();
-            return false;
+            return -1;
         }
         finally
         {
             Jdbc.closeConnection(conn);
         }
-        return true;
     }
 
     public static void main(String[] args){
         // quick test
         UserDao obj = new UserDaoJdbc();
-        User user = obj.findUserByemail("crodenburgh0@e-recht24.de");
-        System.out.println(user.getName());
+        int user = obj.insertNewUser("test@gmail.com","123456","test","test","1999-01-01");
+        System.out.println(user);
     }
 
 }

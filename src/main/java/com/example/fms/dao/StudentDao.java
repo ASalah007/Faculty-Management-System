@@ -22,8 +22,10 @@ public interface StudentDao {
 
     void setStudentGrade(Student student, CourseOffering offering, int grade);
 
-    // birhtdate is in formate "yyyy-mm-dd"
-    boolean insertNewStudent(String email, String password, String name, String id,  String address, String birthdate); 
+    // birhtdate is in format "yyyy-mm-dd"
+    boolean insertNewStudent(String email, String password, String name, String address, String birthdate);
+
+    int generateFacultyId();
 }
 
 
