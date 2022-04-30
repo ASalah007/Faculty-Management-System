@@ -2,6 +2,7 @@ package com.example.fms.dao;
 
 import com.example.fms.model.CourseOffering;
 import com.example.fms.model.Student;
+import com.example.fms.model.User;
 
 import java.sql.Array;
 import java.sql.Connection;
@@ -207,7 +208,28 @@ public class StudentDaoJdbc implements  StudentDao {
 
     @Override
     public boolean insertNewStudent(String email, String password, String name, String id,  String address, String birthdate){
-        // todo
-        return false;
+        UserDao userDaoJdbc = new UserDaoJdbc();
+        if(!userDaoJdbc.insertNewUser(email, password, name, id, address, birthdate))return false;
+        String sql = "insert into students (id) values (\""+id+"\");";
+        Connection conn = null;
+        try{
+            conn = Jdbc.getConnection();
+            PreparedStatement statement = conn.prepareStatement(sql);
+            statement.executeUpdate();
+        }
+        catch(Exception ex){
+            ex.printStackTrace();
+            return false;
+        }
+        finally{
+            Jdbc.closeConnection(conn);
+        }
+        return true;
+    }
+    public static void main(String[] args){
+        // quick test
+        StudentDao obj = new StudentDaoJdbc();
+        boolean result = obj.insertNewStudent("test@gmail.com","test","test","21","test","1995-01-01");
+        System.out.println(result);
     }
 }

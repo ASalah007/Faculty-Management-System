@@ -70,6 +70,30 @@ public class UserDaoJdbc implements UserDao{
         return user;
     }
 
+    @Override
+    public boolean insertNewUser(String email, String password, String name, String id, String address, String birthdate) {
+        String sql = "insert into users(id,name,email,password,address,birthdate)" +
+                "     values(\""+id+"\",\""+name+"\" , \""+email+"\" , md5(\""+password+"\") , \""+address+"\" , \""+birthdate+"\");";
+        Connection conn = null;
+        //boolean success = true;
+        try
+        {
+            conn = Jdbc.getConnection();
+            PreparedStatement statement = conn.prepareStatement(sql);
+            statement.executeUpdate();
+        }
+        catch(Exception ex)
+        {
+            ex.printStackTrace();
+            return false;
+        }
+        finally
+        {
+            Jdbc.closeConnection(conn);
+        }
+        return true;
+    }
+
     public static void main(String[] args){
         // quick test
         UserDao obj = new UserDaoJdbc();
