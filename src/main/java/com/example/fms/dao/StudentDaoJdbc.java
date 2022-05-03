@@ -2,6 +2,7 @@ package com.example.fms.dao;
 
 import com.example.fms.model.CourseOffering;
 import com.example.fms.model.Student;
+import com.example.fms.model.User;
 
 import java.sql.Array;
 import java.sql.Connection;
@@ -206,8 +207,56 @@ public class StudentDaoJdbc implements  StudentDao {
     }
 
     @Override
-    public boolean insertNewStudent(String email, String password, String name, String id,  String address, String birthdate){
-        // todo
-        return false;
+    public boolean insertNewStudent(String email, String password, String name, String address, String birthdate){
+        UserDao userDaoJdbc = new UserDaoJdbc();
+        int id = userDaoJdbc.insertNewUser(email, password, name, address, birthdate);
+        if(id == -1)return false;
+        int facultyId = generateFacultyId();
+        String sql = "insert into students (id,facultyId) values (\""+id+"\",\""+facultyId+"\");";
+        Connection conn = null;
+        try{
+            conn = Jdbc.getConnection();
+            PreparedStatement statement = conn.prepareStatement(sql);
+            statement.executeUpdate();
+        }
+        catch(Exception ex){
+            ex.printStackTrace();
+            return false;
+        }
+        finally{
+            Jdbc.closeConnection(conn);
+        }
+        return true;
+    }
+
+    @Override
+    public int generateFacultyId()
+    {
+        int facultyId = (int)(Math.random() * 9000) +  2201000;
+        String sql = "select * from students where facultyId = \""+facultyId+"\";";
+        Connection conn = null;
+        try{
+            conn = Jdbc.getConnection();
+            PreparedStatement statement = conn.prepareStatement(sql);
+            ResultSet rs = statement.executeQuery();
+            if(rs.next())
+            {
+                return generateFacultyId();
+            }
+        }
+        catch(Exception ex){
+            ex.printStackTrace();
+        }
+        finally{
+            Jdbc.closeConnection(conn);
+        }
+        return facultyId;
+    }
+
+    public static void main(String[] args){
+        // quick test
+        StudentDao obj = new StudentDaoJdbc();
+        boolean result = obj.insertNewStudent("test@gmail.com","test","test","test","1995-01-01");
+        System.out.println(result);
     }
 }
