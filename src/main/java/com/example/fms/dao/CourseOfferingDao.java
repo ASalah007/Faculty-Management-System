@@ -12,4 +12,7 @@ import java.util.ArrayList;
 public interface CourseOfferingDao {
     ArrayList<CourseOffering> findAllCourseOffering();
     ArrayList<CourseOffering> findStudentOfferings(Student student);
+    ArrayList<CourseOffering> findApprovedStudentOfferings(Student student);
+    ArrayList<CourseOffering> findPendingStudentOfferings(Student student); 
+    CourseOffering findCourseOffering(String courseCode, String year, String semester);
 }

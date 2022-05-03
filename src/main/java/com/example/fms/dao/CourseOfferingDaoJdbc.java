@@ -79,4 +79,21 @@ public class CourseOfferingDaoJdbc implements CourseOfferingDao {
         return courseOfferings;
 
     }
+
+    @Override
+    public ArrayList<CourseOffering> findApprovedStudentOfferings(Student student) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public ArrayList<CourseOffering> findPendingStudentOfferings(Student student) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+    @Override
+    public CourseOffering findCourseOffering(String courseCode, String year, String semester) {
+        // TODO Auto-generated method stub
+        return null;
+    }
 }
