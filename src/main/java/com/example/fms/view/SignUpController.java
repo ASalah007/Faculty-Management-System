@@ -38,7 +38,7 @@ public class SignUpController {
     protected void onSignUpButtonClick(){
        StudentDao dao = new StudentDaoJdbc();
        String birthdate= year.getText() + "-" + month.getText() + "-" + day.getText();
-       boolean b = dao.insertNewStudent(email.getText(), password.getText(), name.getText(), id.getText(), address.getText(), birthdate);
+       boolean b = dao.insertNewStudent(email.getText(), password.getText(), name.getText(), address.getText(), birthdate);
        if(!b){
            Alert alert = new Alert(Alert.AlertType.ERROR);
            alert.setHeaderText("Wrong data please try again");

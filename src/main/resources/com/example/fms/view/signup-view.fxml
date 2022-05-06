@@ -28,20 +28,6 @@
                   </TextField>
                </children>
             </HBox>
-            <HBox layoutX="10.0" layoutY="10.0" prefHeight="35.0" prefWidth="600.0">
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ID" wrappingWidth="160.0">
-                     <font>
-                        <Font size="23.0" />
-                     </font>
-                  </Text>
-                  <TextField fx:id="id" prefHeight="31.0" prefWidth="440.0">
-                     <font>
-                        <Font size="17.0" />
-                     </font>
-                  </TextField>
-               </children>
-            </HBox>
             <HBox prefHeight="35.0" prefWidth="600.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Email" wrappingWidth="160.0">
@@ -72,7 +58,7 @@
             </HBox>
             <HBox prefHeight="35.0" prefWidth="600.0">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Adress" wrappingWidth="160.0">
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Address" wrappingWidth="160.0">
                      <font>
                         <Font size="23.0" />
                      </font>
@@ -86,7 +72,7 @@
             </HBox>
             <HBox prefHeight="35.0" prefWidth="600.0">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Birth day" wrappingWidth="160.0">
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="BirthDate" wrappingWidth="160.0">
                      <font>
                         <Font size="23.0" />
                      </font>
@@ -108,17 +94,19 @@
                   </TextField>
                </children>
             </HBox>
-            <HBox nodeOrientation="RIGHT_TO_LEFT" prefHeight="35.0" prefWidth="600.0" spacing="15.0">
+            <HBox alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="40.0" prefWidth="307.0" spacing="30.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#onSignUpButtonClick" prefHeight="40.0" prefWidth="163.0" text="Sign up">
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#onSignUpButtonClick" prefHeight="40.0" prefWidth="163.0" text="Sign up">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Button>
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#onSignUpButtonClick" prefHeight="40.0" prefWidth="163.0" text="Close">
                      <font>
                         <Font size="21.0" />
                      </font>
                   </Button>
                </children>
-               <padding>
-                  <Insets left="20.0" />
-               </padding>
             </HBox>
          </children>
       </VBox>
