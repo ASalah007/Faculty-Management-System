@@ -24,9 +24,9 @@ public class LoginController {
     @FXML
     protected void onSignInButtonClick() {
         String userEmail = email.getText();
-        String userPassword = password.getText();
         UserDao dao = new UserDaoJdbc();
         User user= dao.findUserByemail(userEmail);
+        String userPassword = dao.hashPassword(password.getText());
 
         if(user == null || !user.getPassword().equals(userPassword)){
             Alert alert= new Alert(Alert.AlertType.ERROR);

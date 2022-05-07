@@ -10,4 +10,6 @@ public interface UserDao {
 
     //returns id of inserted user, -1 if failed
     int insertNewUser(String email, String password, String name, String address, String birthdate);
+
+    String hashPassword(String password);
 }

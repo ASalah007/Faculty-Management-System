@@ -2,6 +2,7 @@ package com.example.fms.dao;
 
 import com.example.fms.model.User;
 
+import java.security.MessageDigest;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -95,6 +96,25 @@ public class UserDaoJdbc implements UserDao{
         {
             Jdbc.closeConnection(conn);
         }
+    }
+
+    @Override
+    public String hashPassword(String password){
+        String md5 = "";
+        try{
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            md.update(password.getBytes());
+            byte[] digest = md.digest();
+            StringBuffer sb = new StringBuffer();
+            for(byte b : digest){
+                sb.append(String.format("%02x", b & 0xff));
+            }
+            md5 = sb.toString();
+        }
+        catch(Exception ex){
+            ex.printStackTrace();
+        }
+        return md5;
     }
 
     public static void main(String[] args){
