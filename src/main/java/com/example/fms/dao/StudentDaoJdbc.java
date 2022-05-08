@@ -2,9 +2,7 @@ package com.example.fms.dao;
 
 import com.example.fms.model.CourseOffering;
 import com.example.fms.model.Student;
-import com.example.fms.model.User;
 
-import java.sql.Array;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -252,6 +250,46 @@ public class StudentDaoJdbc implements  StudentDao {
         }
         return facultyId;
     }
+
+    @Override
+    public Student findStudentByFacultyId(String facultyId) {
+        Student student  = null;
+        String sql = "select * from " +
+                "     students s " +
+                "     join users u " +
+                "     on s.id = u.id" +
+                "     where s.facultyId =\""+facultyId+"\";";
+        Connection conn = null;
+
+        try{
+            conn = Jdbc.getConnection();
+            PreparedStatement statement = conn.prepareStatement(sql);
+            ResultSet rs = statement.executeQuery();
+
+            if(rs.next()){
+                student = new Student();
+                student.setId(rs.getString("id"));
+                student.setGPA(rs.getDouble("gpa"));
+                student.setFaculty_ID(rs.getString("facultyId"));
+                student.setName(rs.getString("name"));
+                student.setBirthdate(rs.getDate("birthdate"));
+                student.setEmail(rs.getString("email"));
+                student.setPassword(rs.getString("password"));
+                student.setAddress(rs.getString("address"));
+            }
+        }
+        catch(Exception ex){
+            ex.printStackTrace();
+        }
+        finally{
+            Jdbc.closeConnection(conn);
+        }
+
+        return student;
+	
+    }
+
+    
 
     public static void main(String[] args){
         // quick test

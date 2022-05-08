@@ -26,6 +26,8 @@ public interface StudentDao {
     boolean insertNewStudent(String email, String password, String name, String address, String birthdate);
 
     int generateFacultyId();
+
+    Student findStudentByFacultyId(String facultyId);
 }
 
 
