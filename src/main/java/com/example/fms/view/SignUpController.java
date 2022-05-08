@@ -48,4 +48,10 @@ public class SignUpController {
            App.startLogInView();
        }
     }
+
+    @FXML
+    protected void onCloseButtonClick(){
+        App.startLogInView();
+    }
+
 }
