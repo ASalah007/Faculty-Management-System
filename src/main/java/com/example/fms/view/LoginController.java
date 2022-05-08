@@ -35,18 +35,21 @@ public class LoginController {
             return;
         }
 
+        InstructorDao InstructorDao = new InstructorDaoJdbc();
+        Instructor instructor = InstructorDao.findInstructorById(user.getId());
+        System.out.println(instructor);
+        System.out.println(user.getId());
+        if(instructor != null){
+            App.mainUser = instructor;
+            App.startInstructorView();
+            return;
+        }
+
         StudentDao studentDao = new StudentDaoJdbc(); 
         Student student = studentDao.findStudentById(user.getId());
         if(student != null){
             App.mainUser = student;
             App.startStudentView();
-            return;
-        }
-        InstructorDao InstructorDao = new InstructorDaoJdbc();
-        Instructor instructor = InstructorDao.findInstructorById(user.getId());
-        if(instructor != null){
-            App.mainUser = instructor;
-            App.startInstructorView();
             return;
         }
         Alert alert = new Alert(Alert.AlertType.ERROR);

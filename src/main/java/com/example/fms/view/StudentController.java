@@ -99,7 +99,6 @@ public class StudentController {
                StudentDao stDao = new StudentDaoJdbc();
 
                CourseOffering c = coDao.findCourseOffering(offeringCourseCode, offeringYear, offeringSemester);
-               System.out.println(offeringCourseCode + " " + offeringYear + " " + offeringSemester);
                stDao.enrollStudent(currentStudent, c);
 
                registeredCourses.getChildren().clear();
