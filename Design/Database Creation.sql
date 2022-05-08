@@ -5,7 +5,7 @@ use fms;
 CREATE TABLE users (
     id INT AUTO_INCREMENT,
     name VARCHAR(256),
-    email VARCHAR(512),
+    email VARCHAR(512) unique,
     password char(32),
     address VARCHAR(512),
     birthdate DATE,
