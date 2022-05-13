@@ -269,6 +269,7 @@ public class StudentDaoJdbc implements  StudentDao {
             if(rs.next()){
                 student = new Student();
                 student.setId(rs.getString("id"));
+                refreshStudentGPA(student);
                 student.setGPA(rs.getDouble("gpa"));
                 student.setFaculty_ID(rs.getString("facultyId"));
                 student.setName(rs.getString("name"));
@@ -289,7 +290,29 @@ public class StudentDaoJdbc implements  StudentDao {
 	
     }
 
-    
+    @Override
+    public void refreshStudentGPA(Student student) {
+        String sql = "update students " +
+                "set gpa =" +
+                "(select avg(credits)" +
+                "    from takes" +
+                "    natural join grades_credits" +
+                "    where id = \""+student.getId()+"\")" +
+                "where id = \""+student.getId()+"\";";
+        Connection conn = null;
+        try{
+            conn = Jdbc.getConnection();
+            PreparedStatement statement = conn.prepareStatement(sql);
+            statement.executeUpdate();
+        }
+        catch(Exception ex){
+            ex.printStackTrace();
+        }
+        finally{
+            Jdbc.closeConnection(conn);
+        }
+    }
+
 
     public static void main(String[] args){
         // quick test

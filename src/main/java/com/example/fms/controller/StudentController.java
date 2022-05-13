@@ -1,4 +1,4 @@
-package com.example.fms.view;
+package com.example.fms.controller;
 
 import com.example.fms.App;
 import com.example.fms.dao.*;

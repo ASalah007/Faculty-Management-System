@@ -1,4 +1,4 @@
-package com.example.fms.view;
+package com.example.fms.controller;
 
 import com.example.fms.App;
 import com.example.fms.dao.StudentDaoJdbc;
@@ -57,6 +57,7 @@ public class InstructorController {
             h.getChildren().add(new Label(c.getYear()+""));
 
             Button btn = new Button("Approve");
+            Button btn2 = new Button("Reject");
             btn.setOnAction(e->{
                 Button bt = (Button)e.getSource();
                 HBox hb = (HBox)bt.getParent();
@@ -69,7 +70,19 @@ public class InstructorController {
 
                 studentCourses.getChildren().remove(hb);
             });
-            h.getChildren().add(btn);
+            btn2.setOnAction(e->{
+                Button bt = (Button)e.getSource();
+                HBox hb = (HBox)bt.getParent();
+                String code = ((Label)hb.getChildren().get(1)).getText();
+                String semester = ((Label)hb.getChildren().get(2)).getText();
+                String year = ((Label)hb.getChildren().get(3)).getText();
+
+                CourseOffering offering = coDao.findCourseOffering(code, year, semester);
+                dao.unenrollStudent(st, offering);
+
+                studentCourses.getChildren().remove(hb);
+            });
+            h.getChildren().addAll(btn, btn2);
             h.setSpacing(20);
             studentCourses.getChildren().add(h);
         }

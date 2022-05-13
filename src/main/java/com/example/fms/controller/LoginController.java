@@ -1,4 +1,4 @@
-package com.example.fms.view;
+package com.example.fms.controller;
 
 import com.example.fms.dao.InstructorDao;
 import com.example.fms.dao.InstructorDaoJdbc;

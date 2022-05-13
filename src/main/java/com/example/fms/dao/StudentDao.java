@@ -28,6 +28,8 @@ public interface StudentDao {
     int generateFacultyId();
 
     Student findStudentByFacultyId(String facultyId);
+
+    void refreshStudentGPA(Student student);
 }
 
 
