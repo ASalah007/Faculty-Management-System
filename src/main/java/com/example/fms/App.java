@@ -40,6 +40,10 @@ public class App extends Application {
         startView("view/login-view.fxml");
     }
 
+    public static void startCourseDescriptionView(){
+        startView("view/course-description-view.fxml");
+    }
+
     @Override
     public void start(Stage stage) throws IOException {
         mainStage = stage;

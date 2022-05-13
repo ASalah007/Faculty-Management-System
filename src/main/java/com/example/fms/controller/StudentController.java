@@ -27,7 +27,7 @@ public class StudentController {
 
     @FXML 
     public void initialize(){
-    
+        currentStudent = (Student)App.mainUser;
         CourseOfferingDao dao = new CourseOfferingDaoJdbc();
         ArrayList<CourseOffering> studentApprovedCourses = dao.findApprovedStudentOfferings(currentStudent);
         ArrayList<CourseOffering> studentPendingCourses = dao.findPendingStudentOfferings(currentStudent);
@@ -113,8 +113,6 @@ public class StudentController {
 
            });
            bt2.setOnAction(e->{
-               Button registerButton = (Button) e.getSource();
-               var hb = registerButton.getParent().getChildrenUnmodifiable();
                //create a new window to show the description
                Stage stage = new Stage();
                stage.setTitle("Course Description");

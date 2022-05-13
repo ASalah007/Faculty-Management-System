@@ -92,6 +92,11 @@ public class InstructorController {
     protected void onLogoutButtonClick(){
         App.startLogInView();
     }
+
+    @FXML
+    protected void onCourseDescriptionsButtonClick(){
+        App.startCourseDescriptionView();
+    }
 }
 
 
