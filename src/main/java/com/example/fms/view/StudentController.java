@@ -30,7 +30,8 @@ public class StudentController {
         CourseOfferingDao dao = new CourseOfferingDaoJdbc();
         ArrayList<CourseOffering> studentApprovedCourses = dao.findApprovedStudentOfferings(currentStudent);
         ArrayList<CourseOffering> studentPendingCourses = dao.findPendingStudentOfferings(currentStudent);
-        ArrayList<CourseOffering> allCourseOfferings = dao.findAllCourseOffering();
+        //ArrayList<CourseOffering> allCourseOfferings = dao.findAllCourseOffering();
+        ArrayList<CourseOffering> allCourseOfferings = dao.findAvailableStudentOfferings(currentStudent);
 
         for(CourseOffering co : studentApprovedCourses){
             Label courseName = new Label(co.getName());
@@ -38,10 +39,11 @@ public class StudentController {
             Label year = new Label(String.valueOf(co.getYear()));
             Label semester = new Label(co.getSemester().toString());
             Label stat = new Label("Registered");
+            Label grade = new Label(dao.findStudentGrade(currentStudent, co));
 
             HBox h = new HBox();
             h.setSpacing(10);
-            h.getChildren().addAll(courseName, courseCode, year, semester, stat);
+            h.getChildren().addAll(courseName, courseCode, year, semester, stat, grade);
             h.setAlignment(Pos.CENTER);
             registeredCourses.getChildren().add(h);
         }
@@ -69,7 +71,9 @@ public class StudentController {
                CourseOffering c = coDao.findCourseOffering(offeringCourseCode, offeringYear, offeringSemester);
                stDao.unenrollStudent(currentStudent, c);
 
-               registeredCourses.getChildren().remove(cancelButton.getParent());
+               registeredCourses.getChildren().clear();
+               allCourses.getChildren().clear();
+               initialize();
            });
 
            HBox h = new HBox();
@@ -113,5 +117,11 @@ public class StudentController {
            allCourses.getChildren().add(h);
        }
 
+    }
+
+    @FXML
+    protected void onLogoutButtonClick()
+    {
+        App.startLogInView();
     }
 }

@@ -1,5 +1,6 @@
 package com.example.fms.view;
 
+import com.example.fms.App;
 import com.example.fms.dao.StudentDaoJdbc;
 
 import java.util.List;
@@ -74,6 +75,10 @@ public class InstructorController {
         }
     }
 
+    @FXML
+    protected void onLogoutButtonClick(){
+        App.startLogInView();
+    }
 }
 
 

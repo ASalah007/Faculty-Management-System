@@ -14,9 +14,6 @@ public class SignUpController {
     TextField name;
 
     @FXML
-    TextField id;
-
-    @FXML
     TextField email;
 
     @FXML
