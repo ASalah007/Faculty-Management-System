@@ -52,7 +52,7 @@ public class InstructorController {
         for(var c : co){
             HBox h =new HBox();
             h.getChildren().add(new Label(c.getName()));
-            h.getChildren().add(new Label(c.getCourse_code()));
+            h.getChildren().add(new Label(c.getCourseCode()));
             h.getChildren().add(new Label(c.getSemester().toString()));
             h.getChildren().add(new Label(c.getYear()+""));
 

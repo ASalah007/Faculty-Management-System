@@ -22,10 +22,10 @@ public class CourseDaoJdbc implements CourseDao {
 
             if (rs.next()) {
                 course.setName(rs.getString("name"));
-                course.setCourse_code(rs.getString("course_code"));
-                course.setCredit_hours(rs.getInt("credit_hours"));
-                course.setCourse_ID(rs.getInt("course_ID"));
-                course.setCourse_description(rs.getString("course_description"));
+                course.setCourseCode(rs.getString("course_code"));
+                course.setCreditHours(rs.getInt("credit_hours"));
+                course.setCourseID(rs.getInt("course_ID"));
+                course.setCourseDescription(rs.getString("course_description"));
             }
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -48,10 +48,10 @@ public class CourseDaoJdbc implements CourseDao {
 
             if (rs.next()) {
                 course.setName(rs.getString("name"));
-                course.setCourse_code(rs.getString("course_code"));
-                course.setCredit_hours(rs.getInt("credit_hours"));
-                course.setCourse_ID(rs.getInt("course_ID"));
-                course.setCourse_description(rs.getString("description"));
+                course.setCourseCode(rs.getString("course_code"));
+                course.setCreditHours(rs.getInt("credit_hours"));
+                course.setCourseID(rs.getInt("course_ID"));
+                course.setCourseDescription(rs.getString("description"));
             }
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -64,7 +64,7 @@ public class CourseDaoJdbc implements CourseDao {
     @Override
     public ArrayList<Course> findCoursePrerequisits(Course course) {
         ArrayList<Course> courses = new ArrayList<>();
-        int CurrentId = course.getCourse_ID();
+        int CurrentId = course.getCourseID();
         String sql = "SELECT * FROM prerequisites " +
                 "WHERE course_id=\"" + CurrentId + "\";";
         Connection conn = null;
@@ -89,7 +89,7 @@ public class CourseDaoJdbc implements CourseDao {
 
     @Override
     public void updateDescription(Course course, String newDescription) {
-        int courseID = course.getCourse_ID();
+        int courseID = course.getCourseID();
         String sql = "UPDATE courses" +
                 "SET course_description=\"" + newDescription + "\"" +
                 "Where course_id=\"" + courseID + "\";";

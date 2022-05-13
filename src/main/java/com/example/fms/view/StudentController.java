@@ -8,11 +8,12 @@ import java.util.*;
 
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.event.*;
+import javafx.stage.Stage;
 
 public class StudentController {
 
@@ -35,7 +36,7 @@ public class StudentController {
 
         for(CourseOffering co : studentApprovedCourses){
             Label courseName = new Label(co.getName());
-            Label courseCode = new Label(co.getCourse_code());
+            Label courseCode = new Label(co.getCourseCode());
             Label year = new Label(String.valueOf(co.getYear()));
             Label semester = new Label(co.getSemester().toString());
             Label stat = new Label("Registered");
@@ -50,7 +51,7 @@ public class StudentController {
 
        for(CourseOffering co : studentPendingCourses){
            Label courseName = new Label(co.getName());
-           Label courseCode = new Label(co.getCourse_code());
+           Label courseCode = new Label(co.getCourseCode());
            Label year = new Label(String.valueOf(co.getYear()));
            Label semester = new Label(co.getSemester().toString());
 
@@ -85,11 +86,12 @@ public class StudentController {
 
        for(CourseOffering co : allCourseOfferings){
            Label courseName = new Label(co.getName());
-           Label courseCode = new Label(co.getCourse_code());
+           Label courseCode = new Label(co.getCourseCode());
            Label year = new Label(String.valueOf(co.getYear()));
            Label semester = new Label(co.getSemester().toString());
 
            Button bt = new Button("Register");
+           Button bt2 = new Button("View Description");
 
            bt.setOnAction(e->{
                Button registerButton = (Button) e.getSource();
@@ -110,9 +112,35 @@ public class StudentController {
                initialize();
 
            });
+           bt2.setOnAction(e->{
+               Button registerButton = (Button) e.getSource();
+               var hb = registerButton.getParent().getChildrenUnmodifiable();
+               //create a new window to show the description
+               Stage stage = new Stage();
+               stage.setTitle("Course Description");
+               stage.setMinWidth(300);
+               stage.setMinHeight(300);
+               stage.setMaxWidth(300);
+               stage.setMaxHeight(300);
+               stage.setResizable(false);
+               //create a new vbox to show the description
+               VBox vb = new VBox();
+               //create a new label to show the description
+               Label l = new Label();
+               //set the description
+               l.setText(co.getCourseDescription());
+               l.setWrapText(true);
+               //adding label to vbox
+               vb.getChildren().add(l);
+               //adding vbox to scene
+               Scene scene = new Scene(vb, 300, 300);
+               //setting scene to stage
+               stage.setScene(scene);
+               stage.show();
+           });
            HBox h = new HBox();
            h.setSpacing(10);
-           h.getChildren().addAll(courseName, courseCode,year, semester, bt);
+           h.getChildren().addAll(courseName, courseCode,year, semester, bt,bt2);
            h.setAlignment(Pos.CENTER);
            allCourses.getChildren().add(h);
        }

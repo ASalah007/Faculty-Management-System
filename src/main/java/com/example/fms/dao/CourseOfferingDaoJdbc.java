@@ -29,11 +29,11 @@ public class CourseOfferingDaoJdbc implements CourseOfferingDao {
                 tempCourse.setYear(rs.getInt("year"));
                 tempCourse.setCourse_offering_id(rs.getInt("course_offering_id"));
                 tempCourse.setSemester(CourseOffering.semester_type.valueOf(rs.getString("semester")));
-                tempCourse.setCourse_ID(rs.getInt("course_id"));
-                tempCourse.setCourse_code(rs.getString("course_code"));
+                tempCourse.setCourseID(rs.getInt("course_id"));
+                tempCourse.setCourseCode(rs.getString("course_code"));
                 tempCourse.setName(rs.getString("name"));
-                tempCourse.setCredit_hours(rs.getInt("credit_hours"));
-                tempCourse.setCourse_description(rs.getString("course_description"));
+                tempCourse.setCreditHours(rs.getInt("credit_hours"));
+                tempCourse.setCourseDescription(rs.getString("course_description"));
                 courseOfferings.add(tempCourse);
             }
         } catch (Exception ex) {
@@ -63,11 +63,11 @@ public class CourseOfferingDaoJdbc implements CourseOfferingDao {
                 tempCourse.setYear(rs.getInt("year"));
                 tempCourse.setCourse_offering_id(rs.getInt("course_offering_id"));
                 tempCourse.setSemester(CourseOffering.semester_type.valueOf(rs.getString("semester")));
-                tempCourse.setCourse_ID(rs.getInt("course_id"));
-                tempCourse.setCourse_code(rs.getString("course_code"));
+                tempCourse.setCourseID(rs.getInt("course_id"));
+                tempCourse.setCourseCode(rs.getString("course_code"));
                 tempCourse.setName(rs.getString("name"));
-                tempCourse.setCredit_hours(rs.getInt("credit_hours"));
-                tempCourse.setCourse_description(rs.getString("course_description"));
+                tempCourse.setCreditHours(rs.getInt("credit_hours"));
+                tempCourse.setCourseDescription(rs.getString("course_description"));
                 courseOfferings.add(tempCourse);
             }
         } catch (Exception ex) {
@@ -99,11 +99,11 @@ public class CourseOfferingDaoJdbc implements CourseOfferingDao {
                 tempCourse.setYear(rs.getInt("year"));
                 tempCourse.setCourse_offering_id(rs.getInt("course_offering_id"));
                 tempCourse.setSemester(CourseOffering.semester_type.valueOf(rs.getString("semester")));
-                tempCourse.setCourse_ID(rs.getInt("course_id"));
-                tempCourse.setCourse_code(rs.getString("course_code"));
+                tempCourse.setCourseID(rs.getInt("course_id"));
+                tempCourse.setCourseCode(rs.getString("course_code"));
                 tempCourse.setName(rs.getString("name"));
-                tempCourse.setCredit_hours(rs.getInt("credit_hours"));
-                tempCourse.setCourse_description(rs.getString("course_description"));
+                tempCourse.setCreditHours(rs.getInt("credit_hours"));
+                tempCourse.setCourseDescription(rs.getString("course_description"));
                 courseOfferings.add(tempCourse);
             }
         } catch (Exception ex) {
@@ -134,11 +134,11 @@ public class CourseOfferingDaoJdbc implements CourseOfferingDao {
                 tempCourse.setYear(rs.getInt("year"));
                 tempCourse.setCourse_offering_id(rs.getInt("course_offering_id"));
                 tempCourse.setSemester(CourseOffering.semester_type.valueOf(rs.getString("semester")));
-                tempCourse.setCourse_ID(rs.getInt("course_id"));
-                tempCourse.setCourse_code(rs.getString("course_code"));
+                tempCourse.setCourseID(rs.getInt("course_id"));
+                tempCourse.setCourseCode(rs.getString("course_code"));
                 tempCourse.setName(rs.getString("name"));
-                tempCourse.setCredit_hours(rs.getInt("credit_hours"));
-                tempCourse.setCourse_description(rs.getString("course_description"));
+                tempCourse.setCreditHours(rs.getInt("credit_hours"));
+                tempCourse.setCourseDescription(rs.getString("course_description"));
                 courseOfferings.add(tempCourse);
             }
         } catch (Exception ex) {
@@ -168,11 +168,11 @@ public class CourseOfferingDaoJdbc implements CourseOfferingDao {
                 tempCourse.setYear(rs.getInt("year"));
                 tempCourse.setCourse_offering_id(rs.getInt("course_offering_id"));
                 tempCourse.setSemester(CourseOffering.semester_type.valueOf(rs.getString("semester")));
-                tempCourse.setCourse_ID(rs.getInt("course_id"));
-                tempCourse.setCourse_code(rs.getString("course_code"));
+                tempCourse.setCourseID(rs.getInt("course_id"));
+                tempCourse.setCourseCode(rs.getString("course_code"));
                 tempCourse.setName(rs.getString("name"));
-                tempCourse.setCredit_hours(rs.getInt("credit_hours"));
-                tempCourse.setCourse_description(rs.getString("course_description"));
+                tempCourse.setCreditHours(rs.getInt("credit_hours"));
+                tempCourse.setCourseDescription(rs.getString("course_description"));
                 courseOfferings.add(tempCourse);
             }
         } catch (Exception ex) {
@@ -199,11 +199,11 @@ public class CourseOfferingDaoJdbc implements CourseOfferingDao {
                 tempCourse.setYear(rs.getInt("year"));
                 tempCourse.setCourse_offering_id(rs.getInt("course_offering_id"));
                 tempCourse.setSemester(CourseOffering.semester_type.valueOf(rs.getString("semester")));
-                tempCourse.setCourse_ID(rs.getInt("course_id"));
-                tempCourse.setCourse_code(rs.getString("course_code"));
+                tempCourse.setCourseID(rs.getInt("course_id"));
+                tempCourse.setCourseCode(rs.getString("course_code"));
                 tempCourse.setName(rs.getString("name"));
-                tempCourse.setCredit_hours(rs.getInt("credit_hours"));
-                tempCourse.setCourse_description(rs.getString("course_description"));
+                tempCourse.setCreditHours(rs.getInt("credit_hours"));
+                tempCourse.setCourseDescription(rs.getString("course_description"));
                 return tempCourse;
             }
         } catch (Exception ex) {
@@ -247,7 +247,7 @@ public class CourseOfferingDaoJdbc implements CourseOfferingDao {
         Student student = studentDao.findStudentById("33");
         ArrayList<CourseOffering> courseOfferings = dao.findAvailableStudentOfferings(student);
         for (CourseOffering courseOffering : courseOfferings) {
-            System.out.println(courseOffering.getSemester() + " " + courseOffering.getYear() + " " + courseOffering.getCourse_code());
+            System.out.println(courseOffering.getSemester() + " " + courseOffering.getYear() + " " + courseOffering.getCourseCode());
         }
     }
 

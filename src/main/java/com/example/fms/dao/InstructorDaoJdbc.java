@@ -2,7 +2,6 @@ package com.example.fms.dao;
 
 import com.example.fms.model.CourseOffering;
 import com.example.fms.model.Instructor;
-import com.example.fms.model.Student;
 import com.example.fms.model.User;
 
 import java.sql.Connection;
@@ -46,7 +45,7 @@ public class InstructorDaoJdbc implements InstructorDao{
     @Override
     public ArrayList<Instructor> findInstructorsByOffering(CourseOffering offering) {
         ArrayList<Instructor> instructors = new ArrayList<>();
-        int offering_id=offering.getCourse_ID();
+        int offering_id=offering.getCourseID();
         String sql="select * from course_offerings " +
                 "join teaches using (course_offering_id) " +
                 "join users using(id)" +
