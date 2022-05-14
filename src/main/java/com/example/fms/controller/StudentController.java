@@ -115,7 +115,7 @@ public class StudentController {
            bt2.setOnAction(e->{
                //create a new window to show the description
                Stage stage = new Stage();
-               stage.setTitle("Course Description");
+               stage.setTitle(courseCode.getText()+" "+courseName.getText());
                stage.setMinWidth(300);
                stage.setMinHeight(300);
                stage.setMaxWidth(300);
