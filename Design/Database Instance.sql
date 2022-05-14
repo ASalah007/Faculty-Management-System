@@ -68,15 +68,15 @@ INSERT INTO prerequisites (course_id, prerequisite_id) VALUES ('2', '1');
 INSERT INTO prerequisites (course_id, prerequisite_id) VALUES ('3', '1');
 INSERT INTO prerequisites (course_id, prerequisite_id) VALUES ('3', '2');
 -- course_offering data
-INSERT INTO course_offerings (course_offering_id, year, semester, course_id) VALUES ('1', '2020', 'Fall', '1');
-INSERT INTO course_offerings (course_offering_id, year, semester, course_id) VALUES ('2', '2021', 'Spring', '2');
-INSERT INTO course_offerings (course_offering_id, year, semester, course_id) VALUES ('3', '2021', 'Spring', '3');
-INSERT INTO course_offerings (course_offering_id, year, semester, course_id) VALUES ('4', '2021', 'Summer', '1');
-INSERT INTO course_offerings (course_offering_id, year, semester, course_id) VALUES ('5', '2021', 'Summer', '2');
-INSERT INTO course_offerings (course_offering_id, year, semester, course_id) VALUES ('6', '2021', 'Summer', '3');
-INSERT INTO course_offerings (course_offering_id, year, semester, course_id) VALUES ('7', '2021', 'Fall', '1');
-INSERT INTO course_offerings (course_offering_id, year, semester, course_id) VALUES ('8', '2021', 'Fall', '3');
-INSERT INTO course_offerings (course_offering_id, year, semester, course_id) VALUES ('9', '2022', 'Summer', '3');
+INSERT INTO course_offerings (course_offering_id, year, semester, course_id) VALUES ('1', '2022', 'Fall', '1');
+INSERT INTO course_offerings (course_offering_id, year, semester, course_id) VALUES ('2', '2023', 'Spring', '2');
+INSERT INTO course_offerings (course_offering_id, year, semester, course_id) VALUES ('3', '2023', 'Spring', '3');
+INSERT INTO course_offerings (course_offering_id, year, semester, course_id) VALUES ('4', '2023', 'Summer', '1');
+INSERT INTO course_offerings (course_offering_id, year, semester, course_id) VALUES ('5', '2023', 'Summer', '2');
+INSERT INTO course_offerings (course_offering_id, year, semester, course_id) VALUES ('6', '2023', 'Summer', '3');
+INSERT INTO course_offerings (course_offering_id, year, semester, course_id) VALUES ('7', '2023', 'Fall', '1');
+INSERT INTO course_offerings (course_offering_id, year, semester, course_id) VALUES ('8', '2023', 'Fall', '3');
+INSERT INTO course_offerings (course_offering_id, year, semester, course_id) VALUES ('9', '2024', 'Summer', '3');
 -- teaching data
 INSERT INTO teaches (id, course_offering_id) VALUES ('1', '1');
 INSERT INTO teaches (id, course_offering_id) VALUES ('9', '1');

@@ -294,7 +294,7 @@ public class StudentDaoJdbc implements  StudentDao {
     public void refreshStudentGPA(Student student) {
         String sql = "update students " +
                 "set gpa =" +
-                "select sum(credits*credit_hours)/sum(credit_hours)" +
+                "(select sum(credits*credit_hours)/sum(credit_hours)" +
                 "    from takes" +
                 "    natural join grades_credits" +
                 "    natural join course_offerings" +

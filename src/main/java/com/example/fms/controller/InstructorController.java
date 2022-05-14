@@ -35,6 +35,7 @@ public class InstructorController {
 
     @FXML
     protected void onSearchButtonClick(){
+        studentCourses.getChildren().clear();
         StudentDao dao = new StudentDaoJdbc();
         Student st = dao.findStudentByFacultyId(studentID.getText());
         if(st == null){
