@@ -16,4 +16,5 @@ public interface CourseOfferingDao {
     ArrayList<CourseOffering> findApprovedStudentOfferings(Student student);
     ArrayList<CourseOffering> findPendingStudentOfferings(Student student); 
     CourseOffering findCourseOffering(String courseCode, String year, String semester);
+    String findStudentGrade(Student student, CourseOffering courseOffering);
 }

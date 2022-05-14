@@ -5,6 +5,6 @@ module com.example.fms {
 
 
     opens com.example.fms to javafx.fxml;
-    opens com.example.fms.view to javafx.fxml;
+    opens com.example.fms.controller to javafx.fxml;
     exports com.example.fms;
 }

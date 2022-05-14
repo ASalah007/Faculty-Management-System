@@ -10,11 +10,11 @@ public class Course {
     private String course_description;
     private ArrayList<Course> prerequisites;
 
-    public int getCourse_ID() {
+    public int getCourseID() {
         return course_ID;
     }
 
-    public String getCourse_code() {
+    public String getCourseCode() {
         return course_code;
     }
 
@@ -30,11 +30,11 @@ public class Course {
         return prerequisites;
     }
 
-    public void setCourse_ID(int course_ID) {
+    public void setCourseID(int course_ID) {
         this.course_ID = course_ID;
     }
 
-    public void setCourse_code(String course_code) {
+    public void setCourseCode(String course_code) {
         this.course_code = course_code;
     }
 
@@ -42,7 +42,7 @@ public class Course {
         this.name = name;
     }
 
-    public void setCredit_hours(int credit_hours) {
+    public void setCreditHours(int credit_hours) {
         this.credit_hours = credit_hours;
     }
 
@@ -50,11 +50,11 @@ public class Course {
         this.prerequisites = prerequisites;
     }
 
-    public String getCourse_description() {
+    public String getCourseDescription() {
         return course_description;
     }
 
-    public void setCourse_description(String course_description) {
+    public void setCourseDescription(String course_description) {
         this.course_description = course_description;
     }
 }

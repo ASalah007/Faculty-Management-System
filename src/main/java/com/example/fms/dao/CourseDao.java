@@ -13,4 +13,5 @@ public interface CourseDao {
 
     void updateDescription(Course course, String newDescription);
 
+    ArrayList<Course> getAllCourses();
 }
